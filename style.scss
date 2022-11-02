@@ -1,5 +1,8 @@
 $primary-color: #1e45db;
 $white: #fff;
+$grey-bg: rgb(241, 249, 255);
+$light-dark: #333333;
+$secondary-color: #484848;
 
 *,
 *::before,
@@ -13,6 +16,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  font-size: 10px;
 }
 
 body {
@@ -29,6 +33,38 @@ body {
 .space-between {
   justify-content: space-between;
 }
+.justify-center {
+  justify-content: center;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem 2.4rem;
+  gap: 1.9rem;
+  color: $white;
+  width: 196px;
+  height: 5.7rem;
+  border: none;
+  outline: none;
+  background: $primary-color;
+  border-radius: 0.8rem;
+}
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+/* =========================================== */
 
 header.header {
   font-size: 1.2rem;
@@ -89,6 +125,162 @@ header.header {
 
     &__item:not(:last-child) {
       margin-right: 3.2rem;
+    }
+  }
+}
+
+section.hero-container {
+  background-color: $grey-bg;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    min-height: 843px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .details {
+    max-width: 1036px;
+    margin: auto;
+    padding-top: 106px;
+    h1 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 4.8rem;
+      line-height: 7.2rem;
+      text-align: center;
+      letter-spacing: -0.8px;
+      color: $light-dark;
+    }
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      text-align: center;
+      color: $secondary-color;
+      margin: auto;
+      margin-top: 2.6rem;
+      max-width: 613px;
+    }
+    button {
+      margin: auto;
+      margin-top: 2.6rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    min-height: 300px;
+    .details {
+      h1 {
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-top: 1.6rem;
+      }
+      button {
+        padding: 1.1rem 2rem;
+        height: 3.7rem;
+      }
+    }
+  }
+
+  .hero-cards {
+    margin-top: 8rem;
+    justify-content: space-evenly;
+
+    .card {
+      font-size: 2.4rem;
+      background-color: $white;
+      border-radius: 18px;
+      min-width: 430px;
+
+      .img-container {
+        margin-left: -14rem;
+        margin-bottom: -0.9rem;
+        img {
+          width: 100%;
+        }
+      }
+
+      &__details {
+        padding: 60px 46.5px;
+        padding-left: 0;
+        margin-left: 3rem;
+      }
+
+      button {
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 480px) {
+        min-width: 95%;
+        margin: auto;
+      }
+    }
+    .card-2 {
+      .card__details {
+        text-align: right;
+      }
+      .img-container {
+        margin-left: 0;
+        margin-bottom: -0.9rem;
+        margin-right: -19rem;
+        img {
+          width: 100%;
+        }
+      }
+
+      &__details {
+        margin-right: 3rem;
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      flex-wrap: 2rem;
+
+      .card {
+        .img-container {
+          margin: 0;
+          width: 50%;
+          text-align: center;
+        }
+        flex-direction: column;
+        margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
+
+        &__details {
+          padding: 0;
+          padding-top: 1.6rem;
+          width: 100%;
+          text-align: center;
+
+          button {
+            margin: auto;
+            margin-top: 2rem;
+          }
+        }
+      }
+      .card-2 {
+        flex-direction: column-reverse;
+
+        .img-container {
+          margin: 0;
+        }
+        .card__details {
+          p {
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }
