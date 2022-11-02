@@ -257,6 +257,7 @@ section.hero-container .hero-cards .card-2__details {
   section.hero-container .hero-cards .card__details button {
     margin: auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   section.hero-container .hero-cards .card-2 {
     flex-direction: column-reverse;
