@@ -3,6 +3,7 @@ $white: #fff;
 $grey-bg: rgb(241, 249, 255);
 $light-dark: #333333;
 $secondary-color: #484848;
+$text-grey: #858585;
 
 *,
 *::before,
@@ -14,13 +15,13 @@ $secondary-color: #484848;
 
 html,
 body {
-  width: 100%;
-  height: 100%;
   font-size: 10px;
 }
 
 body {
-  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  color: $light-dark;
 }
 
 .d-flex {
@@ -39,6 +40,10 @@ body {
 
 .text-primary {
   color: $primary-color;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 .btn {
@@ -62,6 +67,12 @@ body {
 }
 .absolute {
   position: absolute;
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* =========================================== */
@@ -132,7 +143,8 @@ header.header {
 section.hero-container {
   background-color: $grey-bg;
   width: 100%;
-  height: 100%;
+  height: auto;
+  padding-bottom: 4rem;
 
   .container {
     min-height: 843px;
@@ -282,4 +294,162 @@ section.hero-container {
       }
     }
   }
+}
+
+section.featured-campaigns {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  .heading {
+    font-size: 2.3rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding-left: 8px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #201f23;
+  }
+
+  .feature {
+    background: #fff;
+    border: 1px solid rgba(33, 32, 30, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .row {
+    margin-bottom: 3rem;
+    .feature-details {
+      margin-left: 2rem;
+    }
+    .img-container {
+      img {
+        height: 55px;
+        width: 55px;
+      }
+    }
+    .left {
+      font-size: 1.6rem;
+      flex: 1;
+      p.title {
+        margin-bottom: 0.2rem;
+      }
+      a {
+        color: $text-grey;
+        text-decoration: none;
+      }
+    }
+    .right {
+      flex: 1;
+      align-self: center;
+      justify-self: center;
+      .box {
+        font-size: 1.6rem;
+        text-align: center;
+        p.platform {
+          color: $text-grey;
+          margin-bottom: 1rem;
+        }
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      width: 95%;
+      margin: auto;
+      margin-bottom: 3rem;
+      .right {
+        margin-top: 1.5rem;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .right-feature-details {
+    margin-left: 2rem;
+  }
+
+  .campaign-details {
+    background: url('/assets/background-img.svg');
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 12px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 105px;
+    height: 324px;
+    width: 324px;
+
+    .details {
+      padding: 3rem;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h2 {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 38px;
+        letter-spacing: -0.011em;
+        text-align: left;
+        color: $white;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 25px;
+        letter-spacing: 0.6px;
+        color: $white;
+      }
+
+      .bottom-details {
+        a {
+          display: block;
+          letter-spacing: -0.011em;
+          color: #201f23;
+          border-radius: 5px;
+          width: 100%;
+          padding: 10px 15px;
+          cursor: pointer;
+          font-size: 16px !important;
+          font-weight: 500 !important;
+          border: 2px solid #fff;
+          text-decoration: none;
+          text-align: center;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  .featured-container {
+    @media (max-width: 480px) {
+      flex-direction: column;
+      width: 100%;
+      .right-feature-details {
+        margin-left: 0;
+      }
+      .campaigns-details {
+        width: 100%;
+      }
+      .campaign-details {
+        margin: 0;
+        margin: auto;
+        margin-bottom: 2rem;
+        width: 90%;
+      }
+    }
+  }
+}
+
+section.campaign-container {
 }
