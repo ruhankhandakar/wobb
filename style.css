@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+header.header {
+  font-size: 1.2rem;
+  width: 100%;
+}
+header.header .container-box {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.05));
+}
+@media (max-width: 480px) {
+  header.header .container-box {
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+header.header .logo {
+  width: 134px;
+}
+header.header .logo img {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  header.header .logo {
+    width: 80px;
+  }
+}
+header.header .center-details {
+  display: flex;
+}
+@media (max-width: 480px) {
+  header.header .center-details {
+    margin-top: 0.5rem;
+  }
+}
+header.header .center-details span {
+  margin-right: 0.2rem;
+}
+header.header .center-details p:not(:last-child) {
+  margin-right: 1rem;
+}
+@media (max-width: 480px) {
+  header.header .right-details {
+    margin-top: 0.5rem;
+  }
+}
+header.header .right-details button {
+  background-color: #1e45db;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #1e45db;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease !important;
+}
+header.header .right-details__item:not(:last-child) {
+  margin-right: 3.2rem;
+}/*# sourceMappingURL=style.css.map */
